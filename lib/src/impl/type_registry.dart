@@ -12,7 +12,7 @@ class _TypeRegistry {
   final Map<int, _TypeHandler<dynamic>> _registry = {};
   final Map<Type, _TypeHandler<dynamic>> _reverseRegistry = {..._builtinTypes};
 
-  void register<T>(int typeId, T? Function(dynamic json) fromJson) {
+  void register<T>(int typeId, T? Function(Map<String, dynamic> json) fromJson) {
     if (T == dynamic) {
       throw ArgumentError('Cannot register dynamic type.');
     }
