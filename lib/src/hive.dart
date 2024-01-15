@@ -37,7 +37,7 @@ class Hive {
   /// ```
   static void registerAdapter<T>(
     String typeName,
-    T? Function(dynamic json) fromJson,
+    T? Function(Map<String, dynamic> json) fromJson,
   ) {
     _typeRegistry.register<T>(Isar.fastHash(typeName), fromJson);
   }
